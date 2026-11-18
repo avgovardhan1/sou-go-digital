@@ -439,19 +439,25 @@ body.bo #fab,body.bo #up{display:none}
 }
 
 
-/* Mobile services dropdown */
+/* Services dropdown: desktop hover menu + polished mobile accordion */
 .dd-toggle{display:none}
-.dm a{display:block;width:100%;height:auto;min-height:42px;padding:11px 14px;border-radius:11px;text-decoration:none;color:var(--ink);font-size:.94rem;white-space:normal}
+.dm a{display:flex;align-items:center;gap:10px;width:100%;height:auto;min-height:42px;padding:11px 14px;border-radius:11px;text-decoration:none;color:var(--ink);font-size:.94rem;white-space:normal;transition:background .18s,color .18s}
 .dm a:hover{background:var(--tint);color:var(--br)}
 @media(max-width:900px){
-  nav .dd{display:grid;grid-template-columns:1fr 44px;align-items:center;width:100%;gap:0}
-  nav .dd>a{grid-column:1;grid-row:1}
-  nav .dd-toggle{display:inline-flex;grid-column:2;grid-row:1;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid var(--line);border-radius:12px;background:var(--tint);color:var(--ink);font-size:1.25rem;cursor:pointer}
-  nav .dd-toggle[aria-expanded="true"]{transform:rotate(180deg)}
-  nav .dd .dm{position:static;grid-column:1/-1;top:auto;left:auto;min-width:0;width:100%;max-height: min(48vh,360px);margin:4px 0 8px;padding:6px;background:var(--tint);border:1px solid var(--line);border-radius:14px;box-shadow:none;overflow-y:auto;display:none!important}
-  nav .dd.x .dm{display:block!important}
-  nav .dd .dm a{padding:12px 14px;min-height:42px;font-size:.94rem}
+  nav .dd{display:grid;grid-template-columns:minmax(0,1fr) 46px;align-items:center;width:100%;gap:4px;padding:3px 5px;border-radius:15px;background:rgba(75,63,208,.035)}
+  nav .dd>a{grid-column:1;grid-row:1;display:flex;align-items:center;min-height:48px;padding:10px 13px;border-radius:12px;font-weight:600;color:var(--ink)}
+  nav .dd>a::after{display:none}
+  nav .dd-toggle{display:inline-flex;grid-column:2;grid-row:1;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--line);border-radius:12px;background:#fff;color:var(--br);font-size:0;cursor:pointer;transition:transform .22s,background .22s,border-color .22s}
+  nav .dd-toggle::before{content:"";width:9px;height:9px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translate(-2px,-2px);transition:transform .22s}
+  nav .dd-toggle[aria-expanded="true"]{background:var(--tint);border-color:rgba(75,63,208,.28)}
+  nav .dd-toggle[aria-expanded="true"]::before{transform:rotate(225deg) translate(-2px,-2px)}
+  nav .dd .dm{position:static;grid-column:1/-1;top:auto;left:auto;min-width:0;width:100%;max-height:min(48vh,370px);margin:3px 0 5px;padding:7px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:inset 3px 0 0 rgba(75,63,208,.10);overflow-y:auto;overscroll-behavior:contain;display:none!important}
+  nav .dd.x .dm{display:block!important;animation:menuIn .18s ease both}
+  nav .dd .dm a{position:relative;padding:10px 12px 10px 17px;min-height:43px;font-size:.92rem;font-weight:500;border-radius:9px;line-height:1.35}
+  nav .dd .dm a::before{content:"";width:6px;height:6px;flex:0 0 6px;border-radius:50%;background:var(--ac);opacity:.8}
+  nav .dd .dm a:active{background:var(--tint)}
 }
+@keyframes menuIn{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
 </style>
 <script type="application/ld+json">
 {
