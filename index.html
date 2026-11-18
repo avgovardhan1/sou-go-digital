@@ -438,6 +438,20 @@ body.bo #fab,body.bo #up{display:none}
   .btn:hover, .card:hover { transform: none; }
 }
 
+
+/* Mobile services dropdown */
+.dd-toggle{display:none}
+.dm a{display:block;width:100%;height:auto;min-height:42px;padding:11px 14px;border-radius:11px;text-decoration:none;color:var(--ink);font-size:.94rem;white-space:normal}
+.dm a:hover{background:var(--tint);color:var(--br)}
+@media(max-width:900px){
+  nav .dd{display:grid;grid-template-columns:1fr 44px;align-items:center;width:100%;gap:0}
+  nav .dd>a{grid-column:1;grid-row:1}
+  nav .dd-toggle{display:inline-flex;grid-column:2;grid-row:1;align-items:center;justify-content:center;width:42px;height:42px;border:1px solid var(--line);border-radius:12px;background:var(--tint);color:var(--ink);font-size:1.25rem;cursor:pointer}
+  nav .dd-toggle[aria-expanded="true"]{transform:rotate(180deg)}
+  nav .dd .dm{position:static;grid-column:1/-1;top:auto;left:auto;min-width:0;width:100%;max-height: min(48vh,360px);margin:4px 0 8px;padding:6px;background:var(--tint);border:1px solid var(--line);border-radius:14px;box-shadow:none;overflow-y:auto;display:none!important}
+  nav .dd.x .dm{display:block!important}
+  nav .dd .dm a{padding:12px 14px;min-height:42px;font-size:.94rem}
+}
 </style>
 <script type="application/ld+json">
 {
@@ -735,7 +749,7 @@ ${rel.length?`<div class="sec"><div class="sh rv"><div><h2>Related services</h2>
 <div class="sec rv"><div class="cta"><h2>Interested in ${x[2]}?</h2><p>Tell us about your business and we will reply with a clear plan and price.</p><div class="row"><a class="btn" href="#contact" data-enq="${x[2]}">Enquire about this service</a><a class="btn g" href="#pricing">See pricing</a></div></div></div>`};
 SV.forEach((x,i)=>{H["s-"+SLUG[i]]=()=>svcPage(i)});
 $("mainx").innerHTML=PG.map(p=>`<section class="pg" id="${p}">${H[p]()}</section>`).join("");
-$("nav").innerHTML=NAV.map(p=>{const l=`<a href="#${p}" data-p="${p}">${p[0].toUpperCase()+p.slice(1)}</a>`;return p==="services"?`<div class="dd">${l}<div class="dm">${SV.map((x,i)=>`<a href="#s-${SLUG[i]}">${x[2]}</a>`).join("")}</div></div>`:l}).join("");
+$("nav").innerHTML=NAV.map(p=>{const l=`<a href="#${p}" data-p="${p}">${p[0].toUpperCase()+p.slice(1)}</a>`;return p==="services"?`<div class="dd">${l}<button class="dd-toggle" type="button" aria-label="Show services" aria-expanded="false">⌄</button><div class="dm">${SV.map((x,i)=>`<a href="#s-${SLUG[i]}">${x[2]}</a>`).join("")}</div></div>`:l}).join("");
 $("ftx").innerHTML=`<div class="fg"><div><a class="logo" href="#home"><svg aria-hidden="true"><use href="#lg"/></svg><span>Sou<b>Go</b> Digital</span></a><p style="color:var(--mut);margin-top:14px">Premium websites, marketing and automation that help your business go further.</p>${nl()}</div>
 <div><h3>Pages</h3>${PG.slice(0,3).map(p=>`<a href="#${p}">${p[0].toUpperCase()+p.slice(1)}</a>`).join("")}</div>
 <div><h3>Company</h3><a href="#insights">Insights</a><a href="#guides">Free guides</a><a href="#team">Our team</a><a href="#pricing">Pricing</a><a href="#about">About</a><a href="#contact">Contact</a><a href="#book">Book a call</a><a href="#privacy">Privacy policy</a><a href="#terms">Terms of service</a></div>
@@ -846,6 +860,7 @@ const tl=()=>{const e=$("tl");if(!e||!$("home").classList.contains("on"))return;
 addEventListener("hashchange",route);route();
 addEventListener("scroll",()=>{document.querySelector("header").classList.toggle("sc",scrollY>20);const h=document.documentElement.scrollHeight-innerHeight;$("prog").style.width=(h>0?scrollY/h*100:0)+"%";tl()},{passive:true});
 $("mb").onclick=function(){const o=$("nav").classList.toggle("open");this.setAttribute("aria-expanded",o)};
+$("nav").addEventListener("click",e=>{const t=e.target.closest(".dd-toggle");if(!t)return;const d=t.closest(".dd"),open=!d.classList.contains("x");d.classList.toggle("x",open);t.setAttribute("aria-expanded",String(open));t.setAttribute("aria-label",open?"Hide services":"Show services")});
 document.addEventListener("click",e=>{const a=e.target.closest("[data-ar]");if(!a)return;const x=AR[a.dataset.ar];$("at").textContent=x[0];$("am").textContent=x[1]+" · "+x[2];$("abody").innerHTML=x[4].map(p=>"<p>"+p+"</p>").join("");$("adlg").showModal()});
 $("acl").onclick=$("ago").onclick=()=>$("adlg").close();
 const web3=async o=>{const r=await fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(Object.assign({access_key:CONFIG.web3key,from_name:"SouGo Digital website",botcheck:""},o))});const j=await r.json();if(!j.success)throw new Error("failed")};
