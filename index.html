@@ -465,7 +465,7 @@ body.bo #fab,body.bo #up{display:none}
   "@type": "ProfessionalService",
   "name": "SouGo Digital",
   "description": "Digital services agency offering website design, WordPress development, search engine optimization, digital marketing, eCommerce, web hosting, server solutions and website maintenance.",
-  "email": ["avgovardhanr@gmail.com", "hello@soujanyadigi.com"],
+  "email": "digitalsougo@gmail.com",
   "telephone": "+918919131844",
   "address": {
     "@type": "PostalAddress",
@@ -512,7 +512,7 @@ const CONFIG={
  web3key:"1cc30dcd-59fa-44ac-9ac0-627598a63c2b", // your Web3Forms access key
  phone:"918919131844", // number for the Call button
  social:{instagram:"",facebook:"",linkedin:"",youtube:"",x:""}, // paste your profile links here, e.g. instagram:"https://instagram.com/yourname"
- people:[{name:"Govardhan",role:"Web Developer – Tech",email:"avgovardhanr@gmail.com",whatsapp:"918919131844"},{name:"Soujanya",role:"Senior Manager",email:"hello@soujanyadigi.com",whatsapp:"919614828292"}] // enquiry contacts. WhatsApp format: country code + number
+ people:[{name:"Govardhan",role:"Web Developer – Tech",whatsapp:"918919131844"},{name:"Soujanya",role:"Senior Manager",whatsapp:"919614828292"},{name:"SouGo Digital",role:"Company Email",email:"digitalsougo@gmail.com",whatsapp:""}] // enquiry contacts. WhatsApp format: country code + number
 };
 const EMAILS=CONFIG.people.map(p=>p.email).filter(Boolean),WAS=CONFIG.people.map(p=>p.whatsapp).filter(Boolean);
 const $=i=>document.getElementById(i),qa=(s,r)=>[...(r||document).querySelectorAll(s)];
@@ -759,7 +759,7 @@ $("nav").innerHTML=NAV.map(p=>{const l=`<a href="#${p}" data-p="${p}">${p[0].toU
 $("ftx").innerHTML=`<div class="fg"><div><a class="logo" href="#home"><svg aria-hidden="true"><use href="#lg"/></svg><span>Sou<b>Go</b> Digital</span></a><p style="color:var(--mut);margin-top:14px">Premium websites, marketing and automation that help your business go further.</p>${nl()}</div>
 <div><h3>Pages</h3>${PG.slice(0,3).map(p=>`<a href="#${p}">${p[0].toUpperCase()+p.slice(1)}</a>`).join("")}</div>
 <div><h3>Company</h3><a href="#insights">Insights</a><a href="#guides">Free guides</a><a href="#team">Our team</a><a href="#pricing">Pricing</a><a href="#about">About</a><a href="#contact">Contact</a><a href="#book">Book a call</a><a href="#privacy">Privacy policy</a><a href="#terms">Terms of service</a></div>
-<div><h3>Services</h3><a href="#s-website-development">Website Development</a><a href="#s-seo-services">SEO Services</a><a href="#s-google-ads">Google Ads</a><a href="#s-web-hosting">Web Hosting</a></div></div>
+<div><h3>Services</h3><a href="#s-website-development">Website Development</a><a href="#s-seo-services">SEO Services</a><a href="#s-google-ads">Google Ads</a><a href="#s-web-hosting">Web Hosting</a></div></div><div style="margin-top:24px;padding-top:18px;border-top:1px solid var(--line);color:var(--mut);font-size:.92rem">Company email: <a href="mailto:digitalsougo@gmail.com" style="color:var(--tx)">digitalsougo@gmail.com</a></div>
 <div class="cp"><span>© ${new Date().getFullYear()} SouGo Digital. Websites that go further.</span><a href="#home" style="color:var(--mut)">Back to top ↑</a></div><div class="gw" aria-hidden="true">SouGo Digital</div>`;
 
 const uniq=a=>a.filter((v,i)=>a.indexOf(v)===i);
@@ -826,7 +826,7 @@ if(step<NS-1){goto(step+1,1);return}
 const d=val();if(d.hp)return;const t=txt(d),sb=$("nx");
 const show=(h,p,a,ic)=>{$("dh").textContent=h;$("dm").textContent=p;$("dact").innerHTML=a;$("okc").style.display=ic?"block":"none";$("cf").hidden=true;$("done").hidden=false};
 if(CONFIG.web3key){sb.disabled=true;sb.textContent="Sending…";
-try{const payload={access_key:CONFIG.web3key,subject:"New SouGo Digital enquiry — "+d.name,from_name:"SouGo Digital Website",replyto:d.email,name:d.name,email:d.email,phone:d.phone,"preferred contact":d.contact,services_required:d.needs,project_budget:d.budget,project_timeline:d.timeline,current_website:d.website,message:txt(d),botcheck:""};const fd=new FormData();Object.entries(payload).forEach(([k,v])=>fd.append(k,String(v??"")));const r=await fetch("https://api.web3forms.com/submit",{method:"POST",body:fd});const j=await r.json();if(!r.ok||!j.success)throw new Error(j.message||j.body?.message||("Web3Forms request failed (HTTP "+r.status+")"));
+try{const payload={access_key:CONFIG.web3key,subject:"New SouGo Digital enquiry — "+d.name,from_name:"SouGo Digital Website",replyto:d.email,name:d.name,email:d.email,phone:d.phone,"preferred contact":d.contact,services_required:d.needs,project_budget:d.budget,project_timeline:d.timeline,current_website:d.website,message:txt(d),botcheck:""};const fd=new FormData();Object.entries(payload).forEach(([k,v])=>fd.append(k,String(v??"")));const r=await fetch("https://api.web3forms.com/submit",{method:"POST",body:fd});const j=await r.json();if(!r.ok||!j.success)throw new Error(j.message||j.body?.message||("Web3Forms request failed (HTTP "+r.status+")"));logToDashboard({name:d.name,email:d.email,phone:d.phone,services_required:d.needs,project_budget:d.budget,project_timeline:d.timeline,message:txt(d)},"Enquiry");
 sb.disabled=false;resetAll();show("Thank you, "+d.name,"Your enquiry has reached our team. We will reply to "+d.email+" soon.",'<a class="btn g" href="#home">Back to home</a>',1);toast("Enquiry sent");return}
 catch(x){console.error("SouGo enquiry email failed:",x);sb.disabled=false;sb.textContent="Send enquiry";toast(x.message||"Email delivery failed. Please try again.");return}}
 // The enquiry is sent directly to the inbox linked to the Web3Forms access key.
@@ -869,7 +869,10 @@ $("mb").onclick=function(){const o=$("nav").classList.toggle("open");this.setAtt
 $("nav").addEventListener("click",e=>{const t=e.target.closest(".dd-toggle");if(!t)return;const d=t.closest(".dd"),open=!d.classList.contains("x");d.classList.toggle("x",open);t.setAttribute("aria-expanded",String(open));t.setAttribute("aria-label",open?"Hide services":"Show services")});
 document.addEventListener("click",e=>{const a=e.target.closest("[data-ar]");if(!a)return;const x=AR[a.dataset.ar];$("at").textContent=x[0];$("am").textContent=x[1]+" · "+x[2];$("abody").innerHTML=x[4].map(p=>"<p>"+p+"</p>").join("");$("adlg").showModal()});
 $("acl").onclick=$("ago").onclick=()=>$("adlg").close();
-const web3=async o=>{const r=await fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(Object.assign({access_key:CONFIG.web3key,from_name:"SouGo Digital website",botcheck:""},o))});const j=await r.json();if(!j.success)throw new Error("failed")};
+// SouGo dashboard lead logging. Configure these two values after deploying Apps Script.
+const DASHBOARD_CONFIG={url:"PASTE_APPS_SCRIPT_WEB_APP_URL",token:"PASTE_FORM_TOKEN"};
+const logToDashboard=(o,type)=>{if(!DASHBOARD_CONFIG.url.startsWith("https://script.google.com/")||DASHBOARD_CONFIG.token.startsWith("PASTE_"))return;const p=new URLSearchParams({token:DASHBOARD_CONFIG.token,type:type||o.type||"Enquiry",name:o.name||"",email:o.email||"",phone:o.phone||"",service:o.services_required||o.service||o.topic||"",budget:o.project_budget||"",timeline:o.project_timeline||"",message:o.message||"",source:"Website",page:location.hash||"#home",website:""});fetch(DASHBOARD_CONFIG.url,{method:"POST",mode:"no-cors",body:p}).catch(e=>console.warn("Dashboard logging failed",e));};
+const web3=async o=>{const r=await fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(Object.assign({access_key:CONFIG.web3key,from_name:"SouGo Digital website",botcheck:""},o))});const j=await r.json();if(!j.success)throw new Error("failed");logToDashboard(o,o.subject&&o.subject.toLowerCase().includes("booking")?"Booking":o.subject&&o.subject.toLowerCase().includes("audit")?"Audit":o.subject&&o.subject.toLowerCase().includes("newsletter")?"Newsletter":"Enquiry")};
 $("af").addEventListener("submit",async ev=>{ev.preventDefault();const w=$("aw").value.trim(),e=$("ae").value.trim();let ok=true;
 $("eaw").textContent=/^(https?:\/\/)?[\w-]+(\.[\w-]+)+\S*$/i.test(w)?"":(ok=false,"Enter a valid website address.");
 $("eae").textContent=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(e)?"":(ok=false,"Enter a valid email address.");
