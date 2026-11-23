@@ -18,7 +18,7 @@
 <meta name="author" content="SouGo Digital">
 <meta name="language" content="English">
 <meta property="og:locale" content="en_IN">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#FBFAFF;--bg2:#fff;--card:rgba(255,255,255,.82);--ink:#14113A;--mut:#5A5688;--line:rgba(60,52,137,.13);--br:#4B3FD0;--ac:#E2562B;--tint:rgba(75,63,208,.09);--bt:#fff;--err:#B42318;--ao:.2;--pad:clamp(20px,5vw,84px);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 *{box-sizing:border-box}
@@ -42,7 +42,7 @@ p{margin:0 0 1em;max-width:60ch}a{color:inherit}
 .gt{background:linear-gradient(100deg,var(--br),var(--ac));-webkit-background-clip:text;background-clip:text;color:transparent}
 #prog{position:fixed;top:env(safe-area-inset-top,0px);left:0;height:2px;width:0;background:linear-gradient(90deg,var(--br),var(--ac));z-index:90}
 header{position:sticky;top:env(safe-area-inset-top,0px);z-index:70;padding:12px 0}
-.bar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;height:64px;padding:0 12px 0 18px;border-radius:99px;border:1px solid var(--line);background:color-mix(in srgb,var(--bg) 72%,transparent);backdrop-filter:blur(18px) saturate(1.4)}
+.bar{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;height:64px;padding:0 12px 0 18px;border-radius:99px;border:1px solid var(--line);background:color-mix(in srgb,var(--bg) 72%,transparent);backdrop-filter:blur(8px) saturate(1.4)}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;font:600 1.15rem Sora,sans-serif;letter-spacing:-.03em}
 .logo b{color:var(--ac);font-weight:600}.logo svg{width:34px;height:34px}
 nav{display:flex;gap:2px;align-items:center}
@@ -57,7 +57,7 @@ nav a:hover{color:var(--ink)}nav a.on{background:var(--tint);color:var(--ink)}
 .btn.g{background:transparent;color:var(--ink);border:1px solid var(--line)}.btn.g:hover{border-color:var(--br);box-shadow:none}
 .btn.sm{padding:10px 20px;font-size:.92rem}
 .row{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-.pg{display:none;padding:34px 0 40px}.pg.on{display:block;animation:in .6s ease both}
+.pg{display:none;padding:34px 0 40px}.pg.on{display:block;animation:in .22s ease both}
 @keyframes in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
 .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;min-height:calc(100vh - 110px);padding:24px 0 40px}
 @media(max-width:960px){.hero{grid-template-columns:1fr;min-height:0;padding-top:30px}}
@@ -80,13 +80,13 @@ nav a:hover{color:var(--ink)}nav a.on{background:var(--tint);color:var(--ink)}
 .k3 div{border:1px solid var(--line);border-radius:12px;padding:10px 12px}
 .k3 small{display:block;color:var(--mut);font-size:.72rem}.k3 strong{font:600 1.1rem Sora,sans-serif}
 .ch{width:100%;margin-top:14px;display:block}
-.ch .l{stroke-dasharray:420;stroke-dashoffset:420;animation:dw 2.4s .5s ease forwards}
+.ch .l{stroke-dasharray:420;stroke-dashoffset:420;animation:dw .65s ease forwards}
 @keyframes dw{to{stroke-dashoffset:0}}
 .rws{display:grid;gap:8px;margin-top:6px}.rws i{height:9px;border-radius:5px;background:var(--tint)}
 .phone{position:absolute;right:-14px;bottom:-6px;width:150px;background:var(--bg2);border:1px solid var(--line);border-radius:26px;padding:12px 10px;box-shadow:0 30px 60px -24px rgba(60,52,137,.4);animation:fl 7s ease-in-out infinite}
 .phone::before{content:"";display:block;width:36px;height:5px;border-radius:9px;background:var(--line);margin:0 auto 10px}
 .phone div{background:var(--tint);border-radius:10px;padding:7px 9px;font-size:.7rem;line-height:1.3;margin-bottom:7px;color:var(--mut)}.phone b{color:var(--ink);display:block;font-weight:500}
-.fc{position:absolute;left:-16px;top:-2px;background:var(--card);border:1px solid var(--line);backdrop-filter:blur(14px);border-radius:16px;padding:11px 16px;font-size:.85rem;line-height:1.4;color:var(--mut);animation:fl 6s -2s ease-in-out infinite}
+.fc{position:absolute;left:-16px;top:-2px;background:var(--card);border:1px solid var(--line);backdrop-filter:blur(14px);border-radius:16px;padding:11px 16px;font-size:.85rem;line-height:1.4;color:var(--mut);animation:fl 4s -2s ease-in-out infinite}
 .fc b{color:var(--ink);font-weight:500;display:block}
 @keyframes fl{50%{transform:translateY(-10px)}}
 @media(max-width:560px){.phone{right:0;width:130px}.fc{left:0}}
@@ -99,7 +99,7 @@ nav a:hover{color:var(--ink)}nav a.on{background:var(--tint);color:var(--ink)}
 .sh{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:34px}
 .sh p{color:var(--mut);margin:0}
 .ph{padding:50px 0 10px}.ph h1{font-size:clamp(2.4rem,6vw,4.2rem)}
-.card{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px;backdrop-filter:blur(10px);transition:transform .35s,border-color .3s;text-align:left;color:var(--ink);font:inherit}
+.card{position:relative;overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:24px;padding:28px;backdrop-filter:none;transition:transform .35s,border-color .3s;text-align:left;color:var(--ink);font:inherit}
 .card::before{content:"";position:absolute;inset:0;background:radial-gradient(280px circle at var(--mx,50%) var(--my,-60%),color-mix(in srgb,var(--br) 26%,transparent),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none}
 .card:hover::before{opacity:1}.card:hover{transform:translateY(-5px);border-color:color-mix(in srgb,var(--br) 55%,var(--line))}
 .card>*{position:relative}.card p{color:var(--mut)}
@@ -169,13 +169,13 @@ dialog{background:var(--bg2);color:var(--ink);border:1px solid var(--line);borde
 dialog::backdrop{background:rgba(4,3,16,.72);backdrop-filter:blur(4px)}
 #toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);background:var(--ink);color:var(--bg);border-radius:99px;padding:12px 24px;opacity:0;transition:.4s;z-index:95;pointer-events:none}
 #toast.on{opacity:1;transform:translate(-50%,0)}
-#pre{position:fixed;inset:0;z-index:100;background:#FBFAFF;color:#14113A;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .8s,visibility .8s}
+#pre{position:fixed;inset:0;z-index:100;background:#FBFAFF;color:#14113A;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .28s ease,visibility .28s ease}
 #pre.out{opacity:0;visibility:hidden}
-#pre svg{width:78px;height:78px;animation:in 1s ease both}
-#pre span{font:600 2rem Sora,sans-serif;letter-spacing:-.03em;animation:in 1s .2s ease both}#pre b{color:#E2562B;font-weight:600}
-#pre i{width:120px;height:2px;background:rgba(60,52,137,.12);overflow:hidden;position:relative}#pre i::after{content:"";position:absolute;inset:0;background:#E2562B;animation:ld 1.6s ease forwards}
+#pre svg{width:78px;height:78px;animation:in .48s cubic-bezier(.2,.7,.2,1) both}
+#pre span{font:600 2rem Sora,sans-serif;letter-spacing:-.03em;animation:in .48s .08s cubic-bezier(.2,.7,.2,1) both}#pre b{color:#E2562B;font-weight:600}
+#pre i{width:120px;height:2px;background:rgba(60,52,137,.12);overflow:hidden;position:relative}#pre i::after{content:"";position:absolute;inset:0;background:#E2562B;animation:ld .58s ease-in-out forwards}
 @keyframes ld{from{transform:translateX(-100%)}}
-.rv{opacity:0;transform:translateY(28px);transition:opacity .9s ease var(--d,0s),transform .9s cubic-bezier(.2,.7,.2,1) var(--d,0s)}.rv.in{opacity:1;transform:none}
+.rv{opacity:0;transform:translateY(10px);transition:opacity .24s ease var(--d,0s),transform .24s ease var(--d,0s)}.rv.in{opacity:1;transform:none}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.ch .l{stroke-dashoffset:0}}
 
 .card{box-shadow:0 1px 2px rgba(40,30,120,.04),0 14px 36px -22px rgba(60,52,137,.28)}
@@ -245,9 +245,9 @@ header.sc .bar{background:rgba(255,255,255,.9);box-shadow:inset 0 1px 0 #fff,0 2
 nav a.on{background:#fff;box-shadow:0 8px 18px -10px rgba(60,52,137,.45),0 0 0 1px var(--line)}
 .chip[aria-pressed=true]{box-shadow:0 14px 28px -14px var(--br)}
 .ban{box-shadow:inset 0 1px 0 #fff,0 60px 100px -60px rgba(75,63,208,.6)}
-.ban h1{animation:hin 1.2s cubic-bezier(.2,.7,.2,1) both}
-@keyframes hin{from{opacity:0;transform:translateY(28px);filter:blur(10px)}}
-.vis::before{content:"";position:absolute;inset:4% 0 0 8%;background:radial-gradient(closest-side,rgba(75,63,208,.38),rgba(255,138,101,.14) 60%,transparent);filter:blur(34px);animation:gl 6s ease-in-out infinite alternate}
+.ban h1{animation:hin .3s ease both}
+@keyframes hin{from{opacity:0;transform:translateY(10px);filter:none}}
+.vis::before{content:"";position:absolute;inset:4% 0 0 8%;background:radial-gradient(closest-side,rgba(75,63,208,.38),rgba(255,138,101,.14) 60%,transparent);filter:blur(18px);opacity:.45}
 @keyframes gl{to{transform:scale(1.14);opacity:.65}}
 .dash{position:relative;z-index:1}.phone,.fc{z-index:2}
 .cta>*{position:relative;z-index:1}
@@ -281,7 +281,13 @@ nav a.on{background:#fff;box-shadow:0 8px 18px -10px rgba(60,52,137,.45),0 0 0 1
 .sm{background:var(--tint);border-radius:16px;padding:16px 18px;font-size:.93rem;color:var(--mut)}.sm b{color:var(--ink);font-weight:500}
 .fn{display:flex;justify-content:space-between;gap:10px;margin-top:22px}.fn #nx{margin-left:auto}
 .card.nh:hover,.card.rv.dn.nh:hover{transform:none}
-.okc{width:68px;height:68px;margin-bottom:14px;display:block}
+#done{max-width:620px;margin:28px auto;padding:clamp(28px,5vw,48px);text-align:center;border:1px solid var(--line);border-radius:28px;background:linear-gradient(145deg,#fff,var(--tint));box-shadow:0 24px 60px -42px rgba(40,35,100,.35)}
+#done h3{font-size:clamp(1.55rem,3vw,2rem);margin:10px 0 8px;letter-spacing:-.03em}
+#done>p{line-height:1.7;margin:0 auto;max-width:460px}
+#done .next-steps{margin:24px auto 0;padding:16px 18px;max-width:440px;border-radius:16px;background:rgba(255,255,255,.78);text-align:left;color:var(--mut);font-size:.92rem}
+#done .next-steps b{display:block;color:var(--ink);margin-bottom:5px;font-weight:600}
+#done .row{justify-content:center;flex-wrap:wrap}
+.okc{width:68px;height:68px;margin:0 auto 14px;display:block}
 .okc circle,.okc path{fill:none;stroke:var(--br);stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:200;stroke-dashoffset:200;animation:dw 1.1s ease forwards}
 
 .audit{display:grid;grid-template-columns:1.1fr .9fr;gap:34px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:32px;padding:clamp(26px,4vw,56px);box-shadow:inset 0 1px 0 #fff,0 40px 80px -56px rgba(75,63,208,.5)}
@@ -466,16 +472,80 @@ body.bo #fab,body.bo #up{display:none}
  .product-visual::before,.product-visual::after{content:"";position:absolute;border:1px solid rgba(75,63,208,.16);border-radius:50%;width:190px;height:190px}
  .product-visual::after{width:250px;height:250px}
  .product-number{position:absolute;top:18px;left:20px;color:var(--mut);font:500 .8rem Sora,sans-serif;letter-spacing:.12em}
- .product-art{display:block;width:100%;height:100%;min-height:210px;object-fit:cover;position:absolute;inset:0}
- .product-visual{min-height:210px;background:#f5f3ff}
+ .product-visual{min-height:210px;background:linear-gradient(135deg,#f0eeff,#fcefe9);display:grid;place-items:center;position:relative;overflow:hidden}
  .product-visual::before,.product-visual::after{display:none}
+ .product-icon{width:112px;height:112px;border-radius:30px;background:rgba(255,255,255,.88);display:grid;place-items:center;box-shadow:0 16px 38px rgba(60,52,137,.12);position:relative;z-index:1}
+ .product-icon svg{width:68px;height:68px;fill:none;stroke:#5548c8;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+ .product-card:nth-child(2) .product-icon svg{stroke:#438f83}
+ .product-card:nth-child(3) .product-icon svg{stroke:#d17e65}
+ .product-card:nth-child(4) .product-icon svg{stroke:#796bd0}
  .product-copy{padding:25px 27px 28px;display:flex;flex-direction:column;flex:1}
  .product-status{font-size:.72rem;font-weight:600;letter-spacing:.12em;color:var(--ac)}
  .product-copy h3{margin:10px 0 8px}
  .product-copy p{color:var(--mut);font-size:.95rem;flex:1}
  .product-link{display:inline-flex;align-items:center;gap:8px;color:var(--br);font-weight:500;text-decoration:none;margin-top:8px}
  .product-link:hover{gap:13px}
- @media(max-width:560px){.products-grid{grid-template-columns:1fr}.product-visual{min-height:175px}.product-art{min-height:175px}}
+ .product-details{margin:12px 0 8px;padding:0;border:0}
+ .product-details summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:9px;
+   padding:9px 13px;border:1px solid var(--line);border-radius:999px;background:#f8f7ff;
+   color:var(--br);font-weight:600;font-size:.82rem;transition:background .2s,border-color .2s}
+ .product-details summary:hover{background:#f0edff;border-color:#c9c2f5}
+ .product-details summary::-webkit-details-marker{display:none}
+ .product-details summary::after{content:"+";font-size:1rem;line-height:1;color:var(--ac)}
+ .product-details[open] summary{border-color:#c9c2f5;background:#f0edff}
+ .product-details[open] summary::after{content:"−"}
+ .product-features{list-style:none;margin:12px 0 2px;padding:13px 14px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px 14px;
+   border-radius:14px;background:#faf9ff;color:var(--mut);font-size:.84rem;line-height:1.45}
+ .product-features li{position:relative;padding-left:18px}
+ .product-features li::before{content:"✓";position:absolute;left:0;top:0;color:#6b60c9;font-weight:700}
+ @media(max-width:560px){.product-features{grid-template-columns:1fr}}
+ @media(max-width:560px){.products-grid{grid-template-columns:1fr}.product-visual{min-height:175px}.product-icon{width:96px;height:96px}.product-icon svg{width:60px;height:60px}}
+
+
+/* Performance: shorter first paint, fewer expensive effects, accessible motion */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .rv{opacity:1!important;transform:none!important}
+}
+@media (max-width:700px){
+  .aur{display:none!important}
+  .vis::before{filter:none!important;animation:none!important;opacity:.25!important}
+}
+
+
+/* Portfolio page */
+.portfolio-intro{margin-top:34px}
+.portfolio-top{display:flex;align-items:flex-end;justify-content:space-between;gap:28px;margin-bottom:32px}
+.portfolio-top h2{font:500 clamp(1.65rem,3vw,2.35rem) Sora,sans-serif;letter-spacing:-.045em;margin:9px 0}
+.portfolio-top p{color:var(--mut);max-width:54ch;margin:0}
+.eyebrow{font-size:.72rem;letter-spacing:.13em;font-weight:600;color:var(--br)}
+.portfolio-count{min-width:132px;padding:17px 20px;border:1px solid var(--line);border-radius:18px;background:#fff;display:flex;flex-direction:column;gap:2px}
+.portfolio-count strong{font:600 2rem Sora,sans-serif;color:var(--br)}
+.portfolio-count span,.portfolio-filter>span,.portfolio-tools label{font-size:.8rem;color:var(--mut)}
+.portfolio-tools{display:grid;grid-template-columns:minmax(220px,.8fr) minmax(0,1.4fr);gap:22px;align-items:end;padding:20px;border:1px solid var(--line);border-radius:20px;background:#fff}
+.portfolio-tools label,.portfolio-filter>span{display:block;margin-bottom:9px;font-weight:500}
+.portfolio-tools input{width:100%;min-height:46px;border:1px solid var(--line);border-radius:12px;padding:0 14px;background:#fbfaff;color:var(--ink);font:inherit;outline:none}
+.portfolio-tools input:focus{border-color:var(--br);box-shadow:0 0 0 3px rgba(101,88,200,.1)}
+.portfolio-tools .chips{margin:0!important}
+.portfolio-result{font-size:.8rem;color:var(--mut);margin:20px 2px 12px}
+@media(max-width:650px){.portfolio-top{align-items:flex-start;flex-direction:column}.portfolio-count{min-width:0;padding:12px 16px}.portfolio-tools{grid-template-columns:1fr;padding:15px}.portfolio-filter .chips{flex-wrap:wrap}}
+
+
+/* Interactive project budget estimator */
+.estimator{margin-top:70px}
+.estimate-layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);gap:18px;align-items:start}
+.estimate-controls{display:grid;gap:10px}
+.estimate-controls>label{font-size:.86rem;font-weight:600;color:var(--ink);margin-top:5px}
+.estimate-controls select{width:100%;min-height:46px;padding:0 12px;border:1px solid var(--line);border-radius:11px;background:#fbfaff;color:var(--ink);font:inherit}
+.estimate-checks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.estimate-checks label{display:flex;gap:8px;align-items:center;font-size:.88rem;color:var(--mut)}
+.estimate-checks input{accent-color:var(--br);width:16px;height:16px}
+.estimate-result{background:linear-gradient(145deg,#f8f6ff,#fff)!important;border-color:#e4defb!important;position:sticky;top:24px}
+.estimate-result>small{display:block;color:var(--mut);margin-top:22px}
+.estimate-result>strong{display:block;font:600 clamp(1.6rem,3vw,2.3rem) Sora,sans-serif;letter-spacing:-.04em;color:var(--br);margin:8px 0}
+.estimate-result p{color:var(--mut);font-size:.9rem}
+.estimate-result .estimate-disclaimer{font-size:.78rem;line-height:1.55;border-top:1px solid var(--line);padding-top:13px;margin-top:18px}
+@media(max-width:700px){.estimate-layout{grid-template-columns:1fr}.estimate-result{position:static}.estimate-checks{grid-template-columns:1fr 1fr}}
 
 </style>
 <script type="application/ld+json">
@@ -585,7 +655,7 @@ work:bx("Selected work","Websites and digital projects")+bx("Education","School 
 pricing:bx("Starter","from ₹14,999")+bx("Business","most chosen")+bx("Growth","monthly plan"),
 about:bx("Our promise","Clear and steady")+bx("Our focus","Results first")+bx("Our approach","Plain updates"),
 contact:bx("Hi, I need a website","You")+bx("Tell us more. We will help.","SouGo Digital")+bx("Budget and timeline","Optional")};
-const NEEDS=["Website","eCommerce","SEO","Google Ads","Social media","Lead generation","Hosting & support","Not sure yet"],BUD=["Under ₹25,000","₹25,000 – ₹50,000","₹50,000 – ₹1,00,000","Above ₹1,00,000","Not sure yet"],TIM=["As soon as possible","Within a month","1–3 months","Just exploring"],PREF=["Email","Phone call","WhatsApp"];
+const NEEDS=["Website","eCommerce","Products","SEO","Google Ads","Social media","Lead generation","Hosting & support","Not sure yet"],BUD=["Under ₹25,000","₹25,000 – ₹50,000","₹50,000 – ₹1,00,000","Above ₹1,00,000","Not sure yet"],TIM=["As soon as possible","Within a month","1–3 months","Just exploring"],PREF=["Email","Phone call","WhatsApp"];
 const grp=(g,a)=>`<div class="chips" data-g="${g}" style="margin:0">${a.map(x=>`<button type="button" class="chip" aria-pressed="false">${x}</button>`).join("")}</div>`;
 const AR=[
 ["Five things every business website needs","Websites","4 min read","A good business website is simple. These five basics decide whether visitors trust you and get in touch.",["Start with a clear headline that says what you do and who it is for. Visitors decide in a few seconds whether they are in the right place, so avoid vague slogans.","Make contact effortless. Put a phone number, a WhatsApp link or a short form on every page, and make sure the button stands out on mobile.","Show proof. Real photos, client names, results and reviews build trust faster than any claim you can write about yourself.","Load quickly. Compress images, remove heavy scripts and test on a normal mobile connection, because slow pages lose visitors before they read a word.","Finally, keep the content current. Outdated prices, broken links or an old copyright year make a business look inactive."]],
@@ -702,23 +772,41 @@ products:()=>`${ph("Products","Digital products for better work","Explore practi
    <div class="sh rv"><div><h2>What we're building</h2><p>Purpose-built tools for forms, business systems, employee engagement and celebrations.</p></div></div>
    <div class="grid products-grid">
      ${[
-       ["01","WORDPRESS PLUGIN","Gravity Form Designer Plugin","Design and customise the look of your WordPress Gravity Forms to create a cleaner, more consistent form experience.","✳","A visual preview of a WordPress form builder with editable form fields and a submit button"],
-       ["02","WORDPRESS INTEGRATION","Custom WordPress ERP Connector Plugin","Connect your WordPress website with your ERP system through a custom-built plugin that supports your business workflow.","▦","A visual preview of an ERP dashboard with business metrics and reporting"],
-       ["03","EMPLOYEE SOFTWARE","Employee Engagement Software","A digital solution to support employee communication, participation and engagement across your organisation.","⌘","A visual preview of an employee engagement platform with a team workspace"],
-       ["04","AUTOMATION PLATFORM","Birthday & Anniversary Automation Website","Make workplace celebrations easier with a website designed to automate birthday and work-anniversary greetings.","✧","A visual preview of an automated birthday and work anniversary celebration website"]
+       ["01","WORDPRESS PLUGIN","Gravity Form Designer Plugin","Design and customise the look of your WordPress Gravity Forms to create a cleaner, more consistent form experience.","✳","A visual preview of a WordPress form builder with editable form fields and a submit button",["Customise form colours, spacing, borders and typography","Create a consistent look across all your forms","Preview layouts and improve the form experience on mobile","Use reusable styling options to save design time"]],
+       ["02","WORDPRESS INTEGRATION","Custom WordPress ERP Connector Plugin","Connect your WordPress website with your ERP system through a custom-built plugin that supports your business workflow.","▦","A visual preview of an ERP dashboard with business metrics and reporting",["Map website fields to the data your ERP needs","Connect enquiry, customer or order workflows","Reduce manual data entry between systems","Plan sync rules and error handling around your ERP setup"]],
+       ["03","EMPLOYEE SOFTWARE","Employee Engagement Software","A digital solution to support employee communication, participation and engagement across your organisation.","⌘","A visual preview of an employee engagement platform with a team workspace",["Share company news, announcements and updates","Support employee recognition and appreciation","Collect feedback through polls or simple surveys","Keep activities and internal events in one place"]],
+       ["04","AUTOMATION PLATFORM","Birthday & Anniversary Automation Website","Make workplace celebrations easier with a website designed to automate birthday and work-anniversary greetings.","✧","A visual preview of an automated birthday and work anniversary celebration website",["Maintain employee birthday and joining-date details","Schedule birthday and work-anniversary reminders","Send personalised greetings using templates","Help teams celebrate important dates consistently"]]
      ].map((x)=>`<article class="card product-card rv nh">
-       <div class="product-visual"><span class="product-number">${x[0]}</span><img class="product-art" src="${['PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NjAgMzQwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgyPSIxIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI2YwZWRmZiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2ZjZWZlOSIvPjwvbGluZWFyR3JhZGllbnQ+PGZpbHRlciBpZD0icyI+PGZlRHJvcFNoYWRvdyBkeD0iMCIgZHk9IjEyIiBzdGREZXZpYXRpb249IjEyIiBmbG9vZC1jb2xvcj0iIzUxNDVhOCIgZmxvb2Qtb3BhY2l0eT0iLjEzIi8+PC9maWx0ZXI+PC9kZWZzPjxyZWN0IHdpZHRoPSI3NjAiIGhlaWdodD0iMzQwIiByeD0iMjYiIGZpbGw9InVybCgjZykiLz48Y2lyY2xlIGN4PSI2MjAiIGN5PSI3MCIgcj0iMTAwIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuMzUiLz48cmVjdCB4PSIxMzAiIHk9IjM2IiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjI2OCIgcng9IjE4IiBmaWxsPSIjZmZmIiBmaWx0ZXI9InVybCgjcykiLz48cmVjdCB4PSIxMzAiIHk9IjM2IiB3aWR0aD0iNTAwIiBoZWlnaHQ9IjM4IiByeD0iMTgiIGZpbGw9IiNmN2Y2ZmMiLz48Y2lyY2xlIGN4PSIxNTQiIGN5PSI1NSIgcj0iNSIgZmlsbD0iI2YyOGI3MyIvPjxjaXJjbGUgY3g9IjE3MiIgY3k9IjU1IiByPSI1IiBmaWxsPSIjYzZiZGY2Ii8+PGNpcmNsZSBjeD0iMTkwIiBjeT0iNTUiIHI9IjUiIGZpbGw9IiNhOWQ4YzYiLz48cmVjdCB4PSIxNjAiIHk9Ijk2IiB3aWR0aD0iMTg1IiBoZWlnaHQ9IjE4IiByeD0iNiIgZmlsbD0iIzI5MjY0YiIvPjxyZWN0IHg9IjE2MCIgeT0iMTI4IiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjkiIHJ4PSI0IiBmaWxsPSIjZTllN2YyIi8+PHJlY3QgeD0iMTYwIiB5PSIxNTQiIHdpZHRoPSI0NDAiIGhlaWdodD0iMzYiIHJ4PSI4IiBmaWxsPSIjZmFmOWZlIiBzdHJva2U9IiNlOGU1ZjUiLz48cmVjdCB4PSIxNzYiIHk9IjE2NyIgd2lkdGg9IjExMCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iI2M4YzRkOSIvPjxyZWN0IHg9IjE2MCIgeT0iMjAyIiB3aWR0aD0iMjEwIiBoZWlnaHQ9IjM2IiByeD0iOCIgZmlsbD0iI2ZhZjlmZSIgc3Ryb2tlPSIjZThlNWY1Ii8+PHJlY3QgeD0iMTc2IiB5PSIyMTUiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iI2M4YzRkOSIvPjxyZWN0IHg9IjM5MCIgeT0iMjAyIiB3aWR0aD0iMjEwIiBoZWlnaHQ9IjM2IiByeD0iOCIgZmlsbD0iI2ZhZjlmZSIgc3Ryb2tlPSIjZThlNWY1Ii8+PHJlY3QgeD0iNDA2IiB5PSIyMTUiIHdpZHRoPSI5NSIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iI2M4YzRkOSIvPjxyZWN0IHg9IjE2MCIgeT0iMjU0IiB3aWR0aD0iMTEyIiBoZWlnaHQ9IjI4IiByeD0iOCIgZmlsbD0iIzU1NDhjOCIvPjxwYXRoIGQ9Im0yOTQgMjY4IDggOCAxNi0xOCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOGFjYmIzIiBzdHJva2Utd2lkdGg9IjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjwvc3ZnPg==','PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NjAgMzQwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgyPSIxIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI2VkZjJmZiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2Y1ZWZmZiIvPjwvbGluZWFyR3JhZGllbnQ+PGZpbHRlciBpZD0icyI+PGZlRHJvcFNoYWRvdyBkeD0iMCIgZHk9IjEyIiBzdGREZXZpYXRpb249IjEyIiBmbG9vZC1jb2xvcj0iIzNmNTZhOCIgZmxvb2Qtb3BhY2l0eT0iLjE0Ii8+PC9maWx0ZXI+PC9kZWZzPjxyZWN0IHdpZHRoPSI3NjAiIGhlaWdodD0iMzQwIiByeD0iMjYiIGZpbGw9InVybCgjZykiLz48cmVjdCB4PSIxMDAiIHk9IjMyIiB3aWR0aD0iNTYwIiBoZWlnaHQ9IjI3NiIgcng9IjE4IiBmaWxsPSIjZmZmIiBmaWx0ZXI9InVybCgjcykiLz48cmVjdCB4PSIxMDAiIHk9IjMyIiB3aWR0aD0iMTIwIiBoZWlnaHQ9IjI3NiIgcng9IjE4IiBmaWxsPSIjMjcyOTRmIi8+PHJlY3QgeD0iMTI1IiB5PSI2MSIgd2lkdGg9IjY2IiBoZWlnaHQ9IjkiIHJ4PSI0IiBmaWxsPSIjYWFhNmU5Ii8+PHJlY3QgeD0iMTI1IiB5PSIxMDAiIHdpZHRoPSI2NSIgaGVpZ2h0PSI3IiByeD0iMyIgZmlsbD0iIzc3Nzk5ZCIvPjxyZWN0IHg9IjEyNSIgeT0iMTI2IiB3aWR0aD0iNTIiIGhlaWdodD0iNyIgcng9IjMiIGZpbGw9IiM3Nzc5OWQiLz48cmVjdCB4PSIxMjUiIHk9IjE1MiIgd2lkdGg9IjY1IiBoZWlnaHQ9IjciIHJ4PSIzIiBmaWxsPSIjYWFhNmU5Ii8+PHJlY3QgeD0iMTI1IiB5PSIxNzgiIHdpZHRoPSI0OCIgaGVpZ2h0PSI3IiByeD0iMyIgZmlsbD0iIzc3Nzk5ZCIvPjxyZWN0IHg9IjI0NCIgeT0iNTkiIHdpZHRoPSIxNzAiIGhlaWdodD0iMTUiIHJ4PSI1IiBmaWxsPSIjMjkyNjRiIi8+PHJlY3QgeD0iMjQ0IiB5PSI5MSIgd2lkdGg9IjExMiIgaGVpZ2h0PSI2NyIgcng9IjEwIiBmaWxsPSIjZjJlZmZmIi8+PHJlY3QgeD0iMzcwIiB5PSI5MSIgd2lkdGg9IjExMiIgaGVpZ2h0PSI2NyIgcng9IjEwIiBmaWxsPSIjZWVmN2Y0Ii8+PHJlY3QgeD0iNDk2IiB5PSI5MSIgd2lkdGg9IjEzNCIgaGVpZ2h0PSI2NyIgcng9IjEwIiBmaWxsPSIjZmZmM2VkIi8+PHBhdGggZD0iTTI2MiAxMzl2LTE4aDEydjE4bTEwIDB2LTI4aDEydjI4bTEwIDB2LTEyaDEydjEyIiBmaWxsPSJub25lIiBzdHJva2U9IiM2NTU4ZDUiIHN0cm9rZS13aWR0aD0iNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTM5MCAxMzl2LTIyaDEydjIybTEwIDB2LTMyaDEydjMybTEwIDB2LTE0aDEydjE0IiBmaWxsPSJub25lIiBzdHJva2U9IiM2MmFkOTQiIHN0cm9rZS13aWR0aD0iNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHBhdGggZD0iTTUxNiAxMzl2LTE0aDEydjE0bTEwIDB2LTMwaDEydjMwbTEwIDB2LTIwaDEydjIwIiBmaWxsPSJub25lIiBzdHJva2U9IiNlOTlhNzgiIHN0cm9rZS13aWR0aD0iNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIi8+PHJlY3QgeD0iMjQ0IiB5PSIxNzciIHdpZHRoPSIzODYiIGhlaWdodD0iMTA1IiByeD0iMTAiIGZpbGw9IiNmYWY5ZmQiIHN0cm9rZT0iI2VlZWNmNSIvPjxwYXRoIGQ9Ik0yNzAgMjUyIDMyMCAyMjYgMzcwIDIzOCA0MjAgMjA0IDQ3MCAyMjAgNTIwIDE5NSA1NzAgMjEwIDYxMCAxODgiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzY1NThkNSIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNMjcwIDI1MiAzMjAgMjI2IDM3MCAyMzggNDIwIDIwNCA0NzAgMjIwIDUyMCAxOTUgNTcwIDIxMCA2MTAgMTg4IiBmaWxsPSJub25lIiBzdHJva2U9IiM2NTU4ZDUiIHN0cm9rZS13aWR0aD0iMTMiIG9wYWNpdHk9Ii4wOCIvPjwvc3ZnPg==','PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NjAgMzQwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgyPSIxIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI2VmZjhmNCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2VkZjBmZiIvPjwvbGluZWFyR3JhZGllbnQ+PGZpbHRlciBpZD0icyI+PGZlRHJvcFNoYWRvdyBkeD0iMCIgZHk9IjEyIiBzdGREZXZpYXRpb249IjEyIiBmbG9vZC1jb2xvcj0iIzNjNzg2OSIgZmxvb2Qtb3BhY2l0eT0iLjEzIi8+PC9maWx0ZXI+PC9kZWZzPjxyZWN0IHdpZHRoPSI3NjAiIGhlaWdodD0iMzQwIiByeD0iMjYiIGZpbGw9InVybCgjZykiLz48Y2lyY2xlIGN4PSI2MzAiIGN5PSI4MCIgcj0iMTA1IiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIuNCIvPjxyZWN0IHg9IjExMCIgeT0iMzgiIHdpZHRoPSI1NDAiIGhlaWdodD0iMjY0IiByeD0iMTgiIGZpbGw9IiNmZmYiIGZpbHRlcj0idXJsKCNzKSIvPjxyZWN0IHg9IjE0MCIgeT0iNjUiIHdpZHRoPSIxODAiIGhlaWdodD0iMTgiIHJ4PSI2IiBmaWxsPSIjMjkyNjRiIi8+PHJlY3QgeD0iMTQwIiB5PSI5NiIgd2lkdGg9IjI0NSIgaGVpZ2h0PSI5IiByeD0iNCIgZmlsbD0iI2U4ZTdlZiIvPjxnPjxjaXJjbGUgY3g9IjE5MCIgY3k9IjE3OCIgcj0iMzEiIGZpbGw9IiNmN2Q3YzkiLz48cGF0aCBkPSJNMTU4IDE3NHEzLTM4IDM0LTM1IDI3IDUgMzAgMzQiIGZpbGw9IiM1NTQ4YzgiLz48cGF0aCBkPSJNMTQ1IDI0OHE3LTQzIDQ1LTQzdDQ3IDQzIiBmaWxsPSIjOGJiZmFjIi8+PGNpcmNsZSBjeD0iMzMwIiBjeT0iMTc4IiByPSIzMSIgZmlsbD0iI2U5YzNhOSIvPjxwYXRoIGQ9Ik0yOTggMTczcTQtMzkgMzUtMzUgMjUgNSAyOSAzNSIgZmlsbD0iIzM2MzY1ZiIvPjxwYXRoIGQ9Ik0yODUgMjQ4cTctNDMgNDUtNDN0NDcgNDMiIGZpbGw9IiNmMGE1OGEiLz48Y2lyY2xlIGN4PSI0NzAiIGN5PSIxNzgiIHI9IjMxIiBmaWxsPSIjZDliNDljIi8+PHBhdGggZD0iTTQzOCAxNzNxNS0zOCAzNC0zNSAyNiA1IDI5IDM1IiBmaWxsPSIjNWI0YjQzIi8+PHBhdGggZD0iTTQyNSAyNDhxNy00MyA0NS00M3Q0NyA0MyIgZmlsbD0iIzllOWJlNCIvPjwvZz48cmVjdCB4PSI1NDUiIHk9IjEzMCIgd2lkdGg9Ijc1IiBoZWlnaHQ9Ijg4IiByeD0iMTIiIGZpbGw9IiNmNmY0ZmYiLz48cGF0aCBkPSJNNTY1IDE3NmgzNW0tMTctMTd2MzUiIHN0cm9rZT0iIzY2NThkNSIgc3Ryb2tlLXdpZHRoPSI2IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cmVjdCB4PSIxNDAiIHk9IjI3MCIgd2lkdGg9IjQ4MCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iI2VmZWRmNSIvPjwvc3ZnPg==','PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NjAgMzQwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgyPSIxIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI2ZmZjFlOSIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2YwZWRmZiIvPjwvbGluZWFyR3JhZGllbnQ+PGZpbHRlciBpZD0icyI+PGZlRHJvcFNoYWRvdyBkeD0iMCIgZHk9IjEyIiBzdGREZXZpYXRpb249IjEyIiBmbG9vZC1jb2xvcj0iIzlhNWI3NSIgZmxvb2Qtb3BhY2l0eT0iLjEzIi8+PC9maWx0ZXI+PC9kZWZzPjxyZWN0IHdpZHRoPSI3NjAiIGhlaWdodD0iMzQwIiByeD0iMjYiIGZpbGw9InVybCgjZykiLz48Y2lyY2xlIGN4PSIxNTAiIGN5PSI3MiIgcj0iNSIgZmlsbD0iI2U5OWE3OCIvPjxjaXJjbGUgY3g9IjYxMCIgY3k9IjYwIiByPSI3IiBmaWxsPSIjOGY4NmRmIi8+PGNpcmNsZSBjeD0iNjcwIiBjeT0iMjIwIiByPSI1IiBmaWxsPSIjZTk5YTc4Ii8+PHBhdGggZD0iTTIwNSAwdjU4bS03LTggNyA4IDctOE01NTAgMHY1OG0tNy04IDcgOCA3LTgiIHN0cm9rZT0iI2U1YTI3ZiIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIi8+PHJlY3QgeD0iMTQ1IiB5PSI2MiIgd2lkdGg9IjQ3MCIgaGVpZ2h0PSIyNDQiIHJ4PSIxOCIgZmlsbD0iI2ZmZiIgZmlsdGVyPSJ1cmwoI3MpIi8+PHJlY3QgeD0iMTgwIiB5PSI5MSIgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyOCIgcng9IjgiIGZpbGw9IiNmOGY2ZmMiLz48cmVjdCB4PSIyMDUiIHk9IjEwMSIgd2lkdGg9IjEyMCIgaGVpZ2h0PSI4IiByeD0iNCIgZmlsbD0iI2JjYjdkNSIvPjxyZWN0IHg9IjE4MCIgeT0iMTM5IiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjE0MCIgcng9IjEyIiBmaWxsPSIjZmZmOGY0Ii8+PHBhdGggZD0iTTM4MCAxNTZjLTIwLTI1LTU4LTctNDQgMjAgNyAxNCA0NCA0MyA0NCA0M3MzNy0yOSA0NC00M2MxNC0yNy0yNC00NS00NC0yMFoiIGZpbGw9IiNlZDlhODAiLz48cGF0aCBkPSJNMjUwIDE2MnYzNW0tMTItMTIgMTIgMTIgMTItMTJNNTEwIDE2MnYzNW0tMTItMTIgMTIgMTIgMTItMTIiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2I0YWRkZiIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48cGF0aCBkPSJNMjgwIDI0MnEyMC0yNSA0MCAwdDQwIDBtODAgMHEyMC0yNSA0MCAwdDQwIDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Q3YzllZiIgc3Ryb2tlLXdpZHRoPSI0IiBzdHJva2UtbGluZWNhcD0icm91bmQiLz48cGF0aCBkPSJNMjIwIDQ3bDcgMTQgMTUgMi0xMSAxMCAzIDE1LTE0LTctMTMgNyAyLTE1LTExLTEwIDE1LTJaIiBmaWxsPSIjZWFhMTdlIi8+PHBhdGggZD0ibTU1MCA0MiA2IDEyIDEzIDItMTAgOSAyIDEzLTExLTYtMTEgNiAyLTEzLTEwLTkgMTMtMloiIGZpbGw9IiM4MTc2ZDUiLz48L3N2Zz4='][Number(x[0])-1]}" alt="${x[5]}" loading="lazy"></div>
-       <div class="product-copy"><span class="product-status">${x[1]}</span><h3>${x[2]}</h3><p>${x[3]}</p><a class="product-link" href="#contact">Enquire about this product <span aria-hidden="true">↗</span></a></div>
+       <div class="product-visual"><span class="product-number">${x[0]}</span><div class="product-icon" aria-hidden="true">${[`
+         <svg viewBox="0 0 96 96"><rect x="18" y="12" width="60" height="72" rx="9"/><path d="M31 30h34M31 43h34M31 56h19"/><rect x="31" y="66" width="8" height="8" rx="2"/><path d="m54 68 5 5 10-12"/></svg>`,
+         `<svg viewBox="0 0 96 96"><rect x="12" y="18" width="72" height="60" rx="9"/><path d="M12 34h72M28 18v16M68 18v16M26 48h15v12H26zM53 48h17M53 60h17"/><path d="m35 70 7 0m11 0h14"/></svg>`,
+         `<svg viewBox="0 0 96 96"><circle cx="36" cy="34" r="12"/><circle cx="65" cy="37" r="10"/><path d="M14 76c1-15 9-23 22-23s21 8 22 23M56 57c13-5 25 3 27 18"/><path d="M48 19v-7m-3 3h6"/></svg>`,
+         `<svg viewBox="0 0 96 96"><rect x="16" y="24" width="64" height="55" rx="8"/><path d="M16 39h64M30 16v16M66 16v16"/><path d="M48 49c-8-10-19-2-13 7 3 5 13 13 13 13s10-8 13-13c6-9-5-17-13-7Z"/></svg>`
+       ][Number(x[0])-1]}</div></div>
+       <div class="product-copy"><span class="product-status">${x[1]}</span><h3>${x[2]}</h3><p>${x[3]}</p>
+       <details class="product-details"><summary>Know more · Product features</summary><ul class="product-features">${x[6].map(f=>`<li>${f}</li>`).join("")}</ul><p class="product-note">Available features and integrations can be tailored to your requirements.</p></details>
+       <a class="product-link" href="#contact" data-enq="${x[2]}">Enquire about this product <span aria-hidden="true">↗</span></a></div>
      </article>`).join("")}
    </div>
  </div>
  <div class="sec rv"><div class="cta"><h2>Looking for a custom solution?</h2><p>Tell us what your business needs. We can help you find the right product or build a tailored solution.</p><div class="row"><a class="btn" href="#contact">Talk to our team</a></div></div></div>`, 
-work:()=>`${ph("Work","Work that moves the needle","A look at how we approach different businesses. Select a project to read more.",A.work)}
-<div class="chips" id="wc" role="group" aria-label="Filter work"></div><div class="grid" id="wl"></div>${stats().replace('class="stats rv"','class="stats rv" style="margin-top:90px"')}${cta()}`,
+work:()=>`${ph("Portfolio","Selected work & case studies","Explore a selection of websites, digital experiences and automation projects from SouGo Digital.",A.work)}
+<div class="sec portfolio-intro"><div class="portfolio-top"><div><span class="eyebrow">OUR PORTFOLIO</span><h2>Ideas brought to life.</h2><p>Browse projects by category, search for a project, and open a case study to see the work behind it.</p></div><div class="portfolio-count"><strong>${WK.length.toString().padStart(2,"0")}</strong><span>Featured projects</span></div></div>
+<div class="portfolio-tools"><div><label for="wsearch">Find a project</label><input id="wsearch" type="search" placeholder="Search projects or categories..." autocomplete="off"></div><div class="portfolio-filter"><span>Explore by category</span><div class="chips" id="wc" role="group" aria-label="Filter portfolio projects"></div></div></div>
+<div class="portfolio-result" id="wresult" aria-live="polite"></div><div class="grid" id="wl"></div></div>
+${stats().replace('class="stats rv"','class="stats rv" style="margin-top:35px"')}${cta()}`,
 
 pricing:()=>`${ph("Pricing","Clear pricing, no surprises","Starting prices below. We confirm a fixed quote after a short call.",A.pricing)}
 <div class="tog" role="group" aria-label="Plan type"><button aria-pressed="true" data-m="web">Websites</button><button aria-pressed="false" data-m="grow">Monthly growth</button></div>
-<div class="grid" id="pl"></div>${quote()}${promises()}${faq()}${cta()}`,
+<div class="grid" id="pl"></div>
+<div class="sec estimator" id="estimate"><div class="sh rv"><div><span class="eyebrow">QUICK PROJECT ESTIMATE</span><h2>Plan your project budget.</h2><p>Choose the options that best describe your project for an indicative starting estimate.</p></div></div>
+<div class="estimate-layout"><div class="estimate-controls card rv">
+<label for="est-type">What do you need?</label><select id="est-type"><option value="website">Business website</option><option value="store">eCommerce website</option><option value="landing">Landing page</option><option value="redesign">Website redesign</option></select>
+<label for="est-pages">How many pages?</label><select id="est-pages"><option value="5">Up to 5 pages</option><option value="10">6–10 pages</option><option value="15">11–15 pages</option><option value="20">More than 15 pages</option></select>
+<label for="est-extra">Additional requirements</label><div class="estimate-checks"><label><input type="checkbox" value="seo"> SEO setup</label><label><input type="checkbox" value="content"> Content assistance</label><label><input type="checkbox" value="forms"> Advanced forms</label><label><input type="checkbox" value="booking"> Booking or automation</label></div>
+<label for="est-timeline">Preferred timeline</label><select id="est-timeline"><option>Flexible</option><option>Within 1 month</option><option>As soon as possible</option></select>
+</div><div class="estimate-result card rv"><span class="review-tag">Indicative estimate</span><small>Estimated project range</small><strong id="est-price">₹15,000 – ₹25,000</strong><p id="est-summary">Business website · Up to 5 pages</p><p class="estimate-disclaimer">This is an early estimate, not a final quotation. The final price depends on your requirements and confirmed scope.</p><a class="btn" id="est-enquire" href="#contact">Discuss this estimate</a></div></div></div>
+${quote()}${promises()}${faq()}${cta()}`,
 
 about:()=>`${ph("About","A small studio with a big standard","We design premium websites and run the marketing that helps your business keep moving forward.",A.about)}
 <div class="sec" style="margin-top:60px"><p class="big rv">We combine marketing thinking with real technical skill, so your website, campaigns and automation work as one system.</p></div>
@@ -749,7 +837,7 @@ contact:()=>`${ph("Contact","Tell us about your project","Share a few details an
 <input id="hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0"></div>
 <div class="fn"><button type="button" class="btn g" id="fb" hidden>Back</button><button class="btn" type="button" id="nx">Continue</button></div>
 </form>
-<div id="done" hidden role="status"><svg class="okc" id="okc" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28"/><path d="M20 33l9 9 16-18"/></svg><h3 id="dh">Thank you</h3><p id="dm" style="color:var(--mut)"></p><div class="row" id="dact" style="margin-top:12px"></div></div></div></div>${faq()}`,
+<div id="done" hidden role="status" aria-live="polite"><svg class="okc" id="okc" viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="28"/><path d="M20 33l9 9 16-18"/></svg><h3 id="dh">Thank you</h3><p id="dm" style="color:var(--mut)"></p><div class="next-steps"><b>What happens next?</b> Our team will review your enquiry and contact you using your preferred method. If you do not hear from us, please check your inbox or spam folder.</div><div class="row" id="dact" style="margin-top:22px"></div></div></div></div>${faq()}`,
 insights:()=>`${ph("Insights","Ideas to help your business grow online","Practical advice on websites, marketing and automation, written in plain language.",AI)}
 <div class="chips" id="ic" role="group" aria-label="Filter articles" style="margin-top:34px"></div><div class="grid" id="il"></div><div class="sec"><div class="sh rv"><div><h2>Free guides</h2><p>Checklists you can use today.</p></div><a class="btn g sm" href="#guides">All guides</a></div><div class="grid">${GUIDES.map(gcard).join("")}</div></div>${cta()}`,
 privacy:()=>legal("Privacy","Privacy policy","How we handle the information you share with us.",[["What we collect",["When you use our contact form or free audit form, we collect the details you type: your name, email address, phone number, project details and, if you give it, your website address.","If you start the contact form and leave, your answers are saved in your own browser so you can continue later. They stay on your device and are removed once you send the form."]],["How we use it",["We use your details only to reply to your enquiry, prepare a quote and, if you ask, review your website. We do not sell your information."]],["How it reaches us",["Form messages are delivered to our team by email through a form-delivery service, Web3Forms, which processes the message on our behalf. If you choose the email or WhatsApp buttons instead, your message goes through your own email app or WhatsApp."]],["How long we keep it",["We keep enquiries for as long as needed to respond and to run any project that follows, and we delete them on request."]],["Your choices",["You can ask to see, correct or delete the information we hold about you at any time by emailing "+mail+"."]],["Changes",["We may update this policy and will change the date at the top of this page when we do."]]]),
@@ -801,22 +889,40 @@ const uniq=a=>a.filter((v,i)=>a.indexOf(v)===i);
 const toast=t=>{const e=$("toast");e.textContent=t;e.classList.add("on");setTimeout(()=>e.classList.remove("on"),2400)};
 const chips=(id,list,fn)=>{const el=$(id);el.innerHTML=["All",...list].map((c,i)=>`<button class="chip" aria-pressed="${i===0}">${c}</button>`).join("");el.onclick=e=>{const b=e.target.closest(".chip");if(!b)return;qa(".chip",el).forEach(c=>c.setAttribute("aria-pressed",c===b));fn(b.textContent)}};
 const dlg=(t,d,g)=>{$("dt").textContent=t;$("dd").textContent=d;$("dg").innerHTML=g.map(x=>`<li>${x}</li>`).join("");$("dlg").showModal()};
-const rvAll=r=>qa(".rv:not(.q)",r).forEach((el,i)=>{el.classList.add("q");el.style.setProperty("--d",(i%4)*.08+"s");rvo.observe(el)});
-const rvo=new IntersectionObserver(en=>en.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");const t=x.target;setTimeout(()=>t.classList.add("dn"),1500);rvo.unobserve(t)}}),{threshold:.1});
+const rvAll=r=>qa(".rv:not(.q)",r).forEach((el,i)=>{el.classList.add("q");el.style.setProperty("--d",(i%3)*.025+"s");rvo.observe(el)});
+const rvo=new IntersectionObserver(en=>en.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");const t=x.target;setTimeout(()=>t.classList.add("dn"),450);rvo.unobserve(t)}}),{threshold:.1});
 
 const rs=c=>{$("sl").innerHTML=SV.map((s,i)=>[s,i]).filter(x=>c==="All"||x[0][1]===c).map(x=>sv(x[0],x[1])).join("");rvAll($("sl"))};
 chips("sc",uniq(SV.map(s=>s[1])),rs);rs("All");
-const rw=c=>{$("wl").innerHTML=WK.filter(w=>c==="All"||w[1]===c).map(wk).join("");rvAll($("wl"))};
-chips("wc",uniq(WK.map(w=>w[1])),rw);rw("All");
+let workCategory="All";
+const rw=()=>{const q=($("wsearch")?.value||"").trim().toLowerCase(),items=WK.map((w,i)=>[w,i]).filter(([w])=>(workCategory==="All"||w[1]===workCategory)&&(!q||[w[0],w[1],w[3],...w[4]].join(" ").toLowerCase().includes(q)));$("wl").innerHTML=items.length?items.map(x=>wk(x[0],x[1])).join(""):'<div class="card nh" style="grid-column:1/-1;text-align:center"><h3>No matching projects</h3><p>Try another project name or category.</p></div>';$("wresult").textContent=`Showing ${items.length} of ${WK.length} projects`;rvAll($("wl"))};
+chips("wc",uniq(WK.map(w=>w[1])),c=>{workCategory=c;rw()});$("wsearch").addEventListener("input",rw);rw();
 const ri=c=>{$("il").innerHTML=AR.map((a,i)=>[a,i]).filter(x=>c==="All"||x[0][1]===c).map(x=>arc(x[0],x[1])).join("");rvAll($("il"))};chips("ic",uniq(AR.map(a=>a[1])),ri);ri("All");
 const rp=m=>{$("pl").innerHTML=PL[m].map(p=>`<div class="card plan rv${p[4]?" hot":""}"><h3>${p[0]}${p[4]?'<span class="pop">Most chosen</span>':""}</h3><div class="price">${inr(p[1])} <small>${p[2]}</small></div><ul>${p[3].map(f=>`<li>${f}</li>`).join("")}</ul><a class="btn${p[4]?"":" g"}" href="#contact" data-plan="${p[0]}">Choose ${p[0]}</a></div>`).join("");rvAll($("pl"))};
 rp("web");
+const updateEstimate=()=>{
+ const type=$("est-type")?.value||"website",pages=Number($("est-pages")?.value||5),extras=[...document.querySelectorAll(".estimate-checks input:checked")],base={website:15000,store:60000,landing:9000,redesign:12000}[type],pageAdd=pages<=5?0:pages<=10?7000:pages<=15?14000:22000,extraAdd=extras.reduce((n,x)=>n+({seo:5000,content:6000,forms:4000,booking:9000}[x.value]||0),0),low=base+pageAdd+extraAdd,high=Math.round((low*1.55)/1000)*1000;
+ $("est-price").textContent="₹"+low.toLocaleString("en-IN")+" – ₹"+high.toLocaleString("en-IN");
+ const typeName={website:"Business website",store:"eCommerce website",landing:"Landing page",redesign:"Website redesign"}[type],summary=typeName+" · "+$("est-pages").selectedOptions[0].text+(extras.length?" · "+extras.length+" add-ons":"");
+ $("est-summary").textContent=summary;
+ $("est-enquire").href="#contact";
+ $("est-enquire").dataset.estimate=summary+" | Indicative estimate: ₹"+low.toLocaleString("en-IN")+" – ₹"+high.toLocaleString("en-IN");
+};
+["est-type","est-pages","est-timeline"].forEach(id=>$(id)?.addEventListener("change",updateEstimate));
+document.querySelectorAll(".estimate-checks input").forEach(el=>el.addEventListener("change",updateEstimate));
+$("est-enquire")?.addEventListener("click",()=>{const m=$("m");if(m){m.value="I would like to discuss this project estimate: "+$("est-enquire").dataset.estimate+".";m.dispatchEvent(new Event("input",{bubbles:true}));}});
+updateEstimate();
 document.querySelector(".tog").onclick=function(e){const b=e.target.closest("button");if(!b)return;qa("button",this).forEach(x=>x.setAttribute("aria-pressed",x===b));rp(b.dataset.m)};
 document.addEventListener("click",e=>{
 const s=e.target.closest("[data-sv]"),w=e.target.closest("[data-wk]"),p=e.target.closest("[data-plan]");
 if(s){location.hash="s-"+SLUG[s.dataset.sv]}
 const dl=e.target.closest(".dm a");if(dl){const d=dl.closest(".dd");d.classList.add("x");dl.blur();setTimeout(()=>d.classList.remove("x"),700)}
-const en=e.target.closest("[data-enq]");if(en){$("m").value="I am interested in: "+en.dataset.enq+".";$("m").dispatchEvent(new Event("input",{bubbles:true}))}
+const en=e.target.closest("[data-enq]");if(en){
+ $("m").value="I am interested in the Products category. Specifically: "+en.dataset.enq+".";
+ $("m").dispatchEvent(new Event("input",{bubbles:true}));
+ const productTile=qa("#need .tile").find(t=>t.textContent.trim()==="Products");
+ if(productTile){productTile.setAttribute("aria-pressed","true");$("eneed").textContent="";save()}
+}
 if(w){location.hash=CSLUG[w.dataset.wk]}
 if(p){$("m").value="I am interested in the "+p.dataset.plan+" plan.";$("m").dispatchEvent(new Event("input"))}});
 $("dc").onclick=()=>$("dlg").close();
@@ -1017,7 +1123,7 @@ $("gdl").onclick=()=>{try{const x=GUIDES[gi],txt=x[0]+"\nSouGo Digital\n\n"+x[3]
 (()=>{const v=$("gt-visitors"),r=$("gt-rate"),a=$("gt-value");if(!v||!r||!a)return;const money=n=>new Intl.NumberFormat("en-IN",{style:"currency",currency:"INR",maximumFractionDigits:0}).format(n);const calc=()=>{const visitors=+v.value,rate=+r.value,value=Math.max(0,+a.value||0),leads=Math.round(visitors*rate/100);$("gt-visitors-v").textContent=visitors.toLocaleString("en-IN");$("gt-rate-v").textContent=rate+"%";$("gt-leads").textContent=leads.toLocaleString("en-IN");$("gt-total").textContent=money(leads*value)};[v,r,a].forEach(x=>x.addEventListener("input",calc));calc();const checks=qa(".launch-check"),update=()=>{const done=checks.filter(x=>x.checked).length,pct=done/checks.length*100;$("launch-bar").style.width=pct+"%";$("launch-count").textContent=done+" of "+checks.length+" completed"};checks.forEach(x=>x.addEventListener("change",update));update()})();
 
 
-setTimeout(()=>$("pre").classList.add("out"),1700);
+window.addEventListener("load",()=>{setTimeout(()=>$("pre").classList.add("out"),650)},{once:true});setTimeout(()=>$("pre").classList.add("out"),1800);
 </script>
 </body>
 </html>
