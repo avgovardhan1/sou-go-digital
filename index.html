@@ -6,6 +6,8 @@
 <meta name="description" content="SouGo Digital is a Bengaluru-based digital agency offering website design, WordPress development, SEO, Google Ads, eCommerce, hosting and business automation across India.">
 <meta name="theme-color" content="#FBFAFF">
 <meta name="robots" content="index, follow">
+<meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SouGo Digital">
 <meta property="og:title" content="SouGo Digital | Website Design, SEO & Digital Marketing Agency">
@@ -1006,6 +1008,12 @@ const SEO_META={
  privacy:["Privacy Policy | SouGo Digital","Read how SouGo Digital handles information submitted through website enquiry and audit forms."],
  terms:["Terms of Service | SouGo Digital","Read the terms for using the SouGo Digital website and enquiring about digital services."]
 };
+const updatePageStructuredData=(page,meta)=>{
+ let node=document.getElementById("sougo-page-schema");if(!node){node=document.createElement("script");node.type="application/ld+json";node.id="sougo-page-schema";document.head.appendChild(node)}
+ const label=page.startsWith("s-")?"Services":page.startsWith("case-")?"Projects":({home:"Home",services:"Services",products:"Products",work:"Portfolio",insights:"Insights",pricing:"Pricing",about:"About",contact:"Contact",team:"Team",guides:"Guides",book:"Book a call",privacy:"Privacy policy",terms:"Terms of service"}[page]||"SouGo Digital");
+ const graph=[{"@context":"https://schema.org","@type":"WebPage","name":meta[0],"description":meta[1],"inLanguage":"en-IN","isPartOf":{"@type":"WebSite","name":"SouGo Digital"},"about":{"@type":"ProfessionalService","name":"SouGo Digital"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"},{"@type":"ListItem","position":2,"name":label}]}];
+ node.textContent=JSON.stringify(graph);
+};
 const route=()=>{let h=(location.hash||"#home").slice(1);if(!PG.includes(h)&&!h.startsWith("s-")&&!h.startsWith("case-"))h="home";
 PG.forEach(p=>$(p).classList.toggle("on",p===h));
 const ap=h.startsWith("s-")?"services":h.startsWith("case-")?"work":h;qa("nav a").forEach(a=>a.classList.toggle("on",a.dataset.p===ap));
@@ -1013,7 +1021,7 @@ $("nav").classList.remove("open");$("mb").setAttribute("aria-expanded","false");
 let meta=SEO_META[h]||SEO_META.home;
 if(h.startsWith("s-")){const ix=SLUG.indexOf(h.slice(2));if(ix>=0){const name=SV[ix][2];meta=[name+" Services in Bengaluru | SouGo Digital", "Explore SouGo Digital's "+name.toLowerCase()+" services for businesses in Bengaluru and across India. Get a practical plan and tailored quote."];}}
 if(h.startsWith("case-")){const slug=h.slice(5),ix=CSLUG.indexOf(slug);if(ix>=0){const name=WK[ix][0];meta=[name+" | SouGo Digital Project", "View the "+name+" digital project overview and the website or automation work completed by SouGo Digital."];}}
-document.title=meta[0];const md=document.querySelector('meta[name="description"]');if(md)md.content=meta[1];
+document.title=meta[0];updatePageStructuredData(h,meta);const md=document.querySelector('meta[name="description"]');if(md)md.content=meta[1];
 const ot=document.querySelector('meta[property="og:title"]'),od=document.querySelector('meta[property="og:description"]'),tt=document.querySelector('meta[name="twitter:title"]'),td=document.querySelector('meta[name="twitter:description"]');
 if(ot)ot.content=meta[0];if(od)od.content=meta[1];if(tt)tt.content=meta[0];if(td)td.content=meta[1];
 scrollTo(0,0);tl()};
