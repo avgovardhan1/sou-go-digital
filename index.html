@@ -18,7 +18,6 @@
 <meta name="author" content="SouGo Digital">
 <meta name="language" content="English">
 <meta property="og:locale" content="en_IN">
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#FBFAFF;--bg2:#fff;--card:rgba(255,255,255,.82);--ink:#14113A;--mut:#5A5688;--line:rgba(60,52,137,.13);--br:#4B3FD0;--ac:#E2562B;--tint:rgba(75,63,208,.09);--bt:#fff;--err:#B42318;--ao:.2;--pad:clamp(20px,5vw,84px);color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 *{box-sizing:border-box}
@@ -33,7 +32,7 @@ body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:40;opa
 .aur i:nth-child(3){background:#5B8DEF;top:35%;left:40%;width:30vmax;height:30vmax;animation-delay:-14s;opacity:calc(var(--ao)*.5)}
 @keyframes dr{to{transform:translate(6vmax,5vmax) scale(1.12)}}
 header,main,footer{position:relative;z-index:2}
-h1,h2,h3{font-family:Sora,system-ui,sans-serif;margin:0 0 .5em;letter-spacing:-.03em;line-height:1.1;font-weight:600;text-wrap:balance}
+h1,h2,h3{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;margin:0 0 .5em;letter-spacing:-.03em;line-height:1.1;font-weight:600;text-wrap:balance}
 h1{font-size:clamp(2.6rem,7vw,5rem);letter-spacing:-.045em;line-height:1.03}
 h2{font-size:clamp(1.9rem,4.6vw,3rem)}h3{font-size:1.2rem;letter-spacing:-.02em}
 p{margin:0 0 1em;max-width:60ch}a{color:inherit}
@@ -139,7 +138,7 @@ th{font:600 .95rem Sora,sans-serif}td+td,th+th{text-align:center}tr:last-child t
 .plan h3{margin:0}.price{font:600 2.8rem Sora,sans-serif;letter-spacing:-.04em;margin:10px 0}.price small{font:400 .95rem "DM Sans";color:var(--mut);letter-spacing:0}
 .plan ul{padding:0;margin:16px 0 26px;list-style:none}.plan li{padding:9px 0;border-bottom:1px solid var(--line);color:var(--mut)}.plan li::before{content:"✓";color:var(--ac);margin-right:10px}
 .plan.hot{border:1px solid transparent;background:linear-gradient(var(--bg2),var(--bg2)) padding-box,linear-gradient(135deg,var(--br),var(--ac)) border-box}
-.pop{display:inline-block;background:var(--ac);color:#fff;font-size:.78rem;border-radius:99px;padding:2px 12px;margin-left:8px;font-family:"DM Sans";font-weight:500;letter-spacing:0;vertical-align:middle}
+.pop{display:inline-block;background:var(--ac);color:#fff;font-size:.78rem;border-radius:99px;padding:2px 12px;margin-left:8px;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-weight:500;letter-spacing:0;vertical-align:middle}
 .tog{display:inline-flex;border:1px solid var(--line);border-radius:99px;padding:4px;margin-bottom:28px;background:var(--card)}
 .tog button{border:0;background:none;color:var(--mut);padding:9px 22px;border-radius:99px;cursor:pointer;font:inherit}
 .tog button[aria-pressed=true]{background:var(--br);color:var(--bt)}
@@ -172,7 +171,7 @@ dialog::backdrop{background:rgba(4,3,16,.72);backdrop-filter:blur(4px)}
 #pre{position:fixed;inset:0;z-index:100;background:#FBFAFF;color:#14113A;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;transition:opacity .28s ease,visibility .28s ease}
 #pre.out{opacity:0;visibility:hidden}
 #pre svg{width:78px;height:78px;animation:in .48s cubic-bezier(.2,.7,.2,1) both}
-#pre span{font:600 2rem Sora,sans-serif;letter-spacing:-.03em;animation:in .48s .08s cubic-bezier(.2,.7,.2,1) both}#pre b{color:#E2562B;font-weight:600}
+#pre span{font:600 2rem system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:-.03em;animation:in .48s .08s cubic-bezier(.2,.7,.2,1) both}#pre b{color:#E2562B;font-weight:600}
 #pre i{width:120px;height:2px;background:rgba(60,52,137,.12);overflow:hidden;position:relative}#pre i::after{content:"";position:absolute;inset:0;background:#E2562B;animation:ld .58s ease-in-out forwards}
 @keyframes ld{from{transform:translateX(-100%)}}
 .rv{opacity:0;transform:translateY(10px);transition:opacity .24s ease var(--d,0s),transform .24s ease var(--d,0s)}.rv.in{opacity:1;transform:none}
@@ -520,7 +519,7 @@ body.bo #fab,body.bo #up{display:none}
 .portfolio-top p{color:var(--mut);max-width:54ch;margin:0}
 .eyebrow{font-size:.72rem;letter-spacing:.13em;font-weight:600;color:var(--br)}
 .portfolio-count{min-width:132px;padding:17px 20px;border:1px solid var(--line);border-radius:18px;background:#fff;display:flex;flex-direction:column;gap:2px}
-.portfolio-count strong{font:600 2rem Sora,sans-serif;color:var(--br)}
+.portfolio-count strong{font:600 2rem system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--br)}
 .portfolio-count span,.portfolio-filter>span,.portfolio-tools label{font-size:.8rem;color:var(--mut)}
 .portfolio-tools{display:grid;grid-template-columns:minmax(220px,.8fr) minmax(0,1.4fr);gap:22px;align-items:end;padding:20px;border:1px solid var(--line);border-radius:20px;background:#fff}
 .portfolio-tools label,.portfolio-filter>span{display:block;margin-bottom:9px;font-weight:500}
@@ -575,7 +574,7 @@ body.bo #fab,body.bo #up{display:none}
 </script>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="lg" viewBox="0 0 48 48"><rect width="48" height="48" rx="13" fill="#3C3489"/><text x="24" y="31" text-anchor="middle" font-family="Sora,sans-serif" font-weight="600" font-size="20" fill="#fff">SG</text><circle cx="39" cy="9" r="8" fill="#F0997B"/><path d="M35.5 12.5L42 6M37.5 6H42V10.5" fill="none" stroke="#4A1B0C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="lg" viewBox="0 0 48 48"><rect width="48" height="48" rx="13" fill="#3C3489"/><text x="24" y="31" text-anchor="middle" font-family="Arial,sans-serif" font-weight="600" font-size="20" fill="#fff">SG</text><circle cx="39" cy="9" r="8" fill="#F0997B"/><path d="M35.5 12.5L42 6M37.5 6H42V10.5" fill="none" stroke="#4A1B0C" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol></svg>
 <div id="pre"><svg><use href="#lg"/></svg><span>Sou<b>Go</b> Digital</span><i></i></div>
 <div class="aur" aria-hidden="true"><i></i><i></i><i></i></div>
 <div id="prog"></div>
@@ -1123,7 +1122,7 @@ $("gdl").onclick=()=>{try{const x=GUIDES[gi],txt=x[0]+"\nSouGo Digital\n\n"+x[3]
 (()=>{const v=$("gt-visitors"),r=$("gt-rate"),a=$("gt-value");if(!v||!r||!a)return;const money=n=>new Intl.NumberFormat("en-IN",{style:"currency",currency:"INR",maximumFractionDigits:0}).format(n);const calc=()=>{const visitors=+v.value,rate=+r.value,value=Math.max(0,+a.value||0),leads=Math.round(visitors*rate/100);$("gt-visitors-v").textContent=visitors.toLocaleString("en-IN");$("gt-rate-v").textContent=rate+"%";$("gt-leads").textContent=leads.toLocaleString("en-IN");$("gt-total").textContent=money(leads*value)};[v,r,a].forEach(x=>x.addEventListener("input",calc));calc();const checks=qa(".launch-check"),update=()=>{const done=checks.filter(x=>x.checked).length,pct=done/checks.length*100;$("launch-bar").style.width=pct+"%";$("launch-count").textContent=done+" of "+checks.length+" completed"};checks.forEach(x=>x.addEventListener("change",update));update()})();
 
 
-window.addEventListener("load",()=>{setTimeout(()=>$("pre").classList.add("out"),650)},{once:true});setTimeout(()=>$("pre").classList.add("out"),1800);
+setTimeout(()=>$("pre").classList.add("out"),260);
 </script>
 </body>
 </html>
