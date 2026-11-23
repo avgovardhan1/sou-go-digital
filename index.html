@@ -546,6 +546,20 @@ body.bo #fab,body.bo #up{display:none}
 .estimate-result .estimate-disclaimer{font-size:.78rem;line-height:1.55;border-top:1px solid var(--line);padding-top:13px;margin-top:18px}
 @media(max-width:700px){.estimate-layout{grid-template-columns:1fr}.estimate-result{position:static}.estimate-checks{grid-template-columns:1fr 1fr}}
 
+
+/* Additional rendering-performance pass */
+body::after{display:none!important}
+.aur i{animation:none!important;filter:blur(64px)!important;transform:translateZ(0)}
+.sec{content-visibility:auto;contain-intrinsic-size:auto 900px}
+@media(max-width:768px){
+  .bar{backdrop-filter:none!important;-webkit-backdrop-filter:none!important;background:var(--bg)!important}
+  header{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+  .aur i{filter:blur(38px)!important;opacity:calc(var(--ao)*.55)!important}
+  .sec{contain-intrinsic-size:auto 700px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
 </style>
 <script type="application/ld+json">
 {
