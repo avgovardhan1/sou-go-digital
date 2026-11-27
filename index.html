@@ -8,6 +8,8 @@
 <meta name="robots" content="index, follow">
 <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="canonical" href="https://sougodigital.pages.dev/">
+<meta property="og:url" content="https://sougodigital.pages.dev/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="SouGo Digital">
 <meta property="og:title" content="SouGo Digital | Website Design, SEO & Digital Marketing Agency">
@@ -567,6 +569,8 @@ body::after{display:none!important}
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "@id": "https://sougodigital.pages.dev/#business",
+  "url": "https://sougodigital.pages.dev/",
   "name": "SouGo Digital",
   "description": "Digital services agency offering website design, WordPress development, search engine optimization, digital marketing, eCommerce, web hosting, server solutions and website maintenance.",
   "email": "digitalsougo@gmail.com",
@@ -1011,7 +1015,9 @@ const SEO_META={
 const updatePageStructuredData=(page,meta)=>{
  let node=document.getElementById("sougo-page-schema");if(!node){node=document.createElement("script");node.type="application/ld+json";node.id="sougo-page-schema";document.head.appendChild(node)}
  const label=page.startsWith("s-")?"Services":page.startsWith("case-")?"Projects":({home:"Home",services:"Services",products:"Products",work:"Portfolio",insights:"Insights",pricing:"Pricing",about:"About",contact:"Contact",team:"Team",guides:"Guides",book:"Book a call",privacy:"Privacy policy",terms:"Terms of service"}[page]||"SouGo Digital");
- const graph=[{"@context":"https://schema.org","@type":"WebPage","name":meta[0],"description":meta[1],"inLanguage":"en-IN","isPartOf":{"@type":"WebSite","name":"SouGo Digital"},"about":{"@type":"ProfessionalService","name":"SouGo Digital"}},{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home"},{"@type":"ListItem","position":2,"name":label}]}];
+ // This site currently uses hash-based sections in one HTML document.
+ // Keep one canonical URL and do not publish misleading breadcrumb URLs for fragments.
+ const graph=[{"@context":"https://schema.org","@type":"WebPage","@id":"https://sougodigital.pages.dev/#webpage","url":"https://sougodigital.pages.dev/","name":meta[0],"description":meta[1],"inLanguage":"en-IN","isPartOf":{"@type":"WebSite","@id":"https://sougodigital.pages.dev/#website","url":"https://sougodigital.pages.dev/","name":"SouGo Digital"},"about":{"@id":"https://sougodigital.pages.dev/#business"}}];
  node.textContent=JSON.stringify(graph);
 };
 const route=()=>{let h=(location.hash||"#home").slice(1);if(!PG.includes(h)&&!h.startsWith("s-")&&!h.startsWith("case-"))h="home";
@@ -1022,8 +1028,8 @@ let meta=SEO_META[h]||SEO_META.home;
 if(h.startsWith("s-")){const ix=SLUG.indexOf(h.slice(2));if(ix>=0){const name=SV[ix][2];meta=[name+" Services in Bengaluru | SouGo Digital", "Explore SouGo Digital's "+name.toLowerCase()+" services for businesses in Bengaluru and across India. Get a practical plan and tailored quote."];}}
 if(h.startsWith("case-")){const slug=h.slice(5),ix=CSLUG.indexOf(slug);if(ix>=0){const name=WK[ix][0];meta=[name+" | SouGo Digital Project", "View the "+name+" digital project overview and the website or automation work completed by SouGo Digital."];}}
 document.title=meta[0];updatePageStructuredData(h,meta);const md=document.querySelector('meta[name="description"]');if(md)md.content=meta[1];
-const ot=document.querySelector('meta[property="og:title"]'),od=document.querySelector('meta[property="og:description"]'),tt=document.querySelector('meta[name="twitter:title"]'),td=document.querySelector('meta[name="twitter:description"]');
-if(ot)ot.content=meta[0];if(od)od.content=meta[1];if(tt)tt.content=meta[0];if(td)td.content=meta[1];
+const ot=document.querySelector('meta[property="og:title"]'),od=document.querySelector('meta[property="og:description"]'),ou=document.querySelector('meta[property="og:url"]'),tt=document.querySelector('meta[name="twitter:title"]'),td=document.querySelector('meta[name="twitter:description"]');
+if(ot)ot.content=meta[0];if(od)od.content=meta[1];if(ou)ou.content="https://sougodigital.pages.dev/";if(tt)tt.content=meta[0];if(td)td.content=meta[1];
 scrollTo(0,0);tl()};
 const tl=()=>{const e=$("tl");if(!e||!$("home").classList.contains("on"))return;const r=e.getBoundingClientRect(),p=Math.min(1,Math.max(0,(innerHeight*.75-r.top)/r.height));e.style.setProperty("--p",p);qa("li",e).forEach((li,i,a)=>li.classList.toggle("on",(i+.2)/a.length<=p))};
 addEventListener("hashchange",route);route();
@@ -1032,9 +1038,10 @@ $("mb").onclick=function(){const o=$("nav").classList.toggle("open");this.setAtt
 $("nav").addEventListener("click",e=>{const t=e.target.closest(".dd-toggle");if(!t)return;const d=t.closest(".dd"),open=!d.classList.contains("x");d.classList.toggle("x",open);t.setAttribute("aria-expanded",String(open));t.setAttribute("aria-label",open?"Hide services":"Show services")});
 document.addEventListener("click",e=>{const a=e.target.closest("[data-ar]");if(!a)return;const x=AR[a.dataset.ar];$("at").textContent=x[0];$("am").textContent=x[1]+" · "+x[2];$("abody").innerHTML=x[4].map(p=>"<p>"+p+"</p>").join("");$("adlg").showModal()});
 $("acl").onclick=$("ago").onclick=()=>$("adlg").close();
-// SouGo dashboard lead logging. Configure these two values after deploying Apps Script.
-const DASHBOARD_CONFIG={url:"https://script.google.com/macros/s/AKfycbwOZ-zye9vEGNvWMPIYEL8OOf71ipvz_lL6NU-r-z3hy07VQHS-qCHdP64SNyaFwb4P/exec",token:"888318d8ce2f48ba85aca9c775813513"};
-const logToDashboard=(o,type)=>{if(!DASHBOARD_CONFIG.url.startsWith("https://script.google.com/")||DASHBOARD_CONFIG.token.startsWith("PASTE_"))return;const p=new URLSearchParams({token:DASHBOARD_CONFIG.token,type:type||o.type||"Enquiry",name:o.name||"",email:o.email||"",phone:o.phone||"",service:o.services_required||o.service||o.topic||"",budget:o.project_budget||"",timeline:o.project_timeline||"",message:o.message||"",source:"Website",page:location.hash||"#home",website:""});fetch(DASHBOARD_CONFIG.url,{method:"POST",mode:"no-cors",body:p}).catch(e=>console.warn("Dashboard logging failed",e));};
+// Dashboard logging intentionally disabled in the browser.
+// Never place Apps Script bearer tokens in public HTML. Move this integration
+// to a server-side endpoint before re-enabling spreadsheet logging.
+const logToDashboard=()=>{};
 const web3=async o=>{const r=await fetch("https://api.web3forms.com/submit",{method:"POST",headers:{"Content-Type":"application/json",Accept:"application/json"},body:JSON.stringify(Object.assign({access_key:CONFIG.web3key,from_name:"SouGo Digital website",botcheck:""},o))});const j=await r.json();if(!j.success)throw new Error("failed");logToDashboard(o,o.subject&&o.subject.toLowerCase().includes("booking")?"Booking":o.subject&&o.subject.toLowerCase().includes("audit")?"Audit":o.subject&&o.subject.toLowerCase().includes("newsletter")?"Newsletter":"Enquiry")};
 $("af").addEventListener("submit",async ev=>{ev.preventDefault();const w=$("aw").value.trim(),e=$("ae").value.trim();let ok=true;
 $("eaw").textContent=/^(https?:\/\/)?[\w-]+(\.[\w-]+)+\S*$/i.test(w)?"":(ok=false,"Enter a valid website address.");
